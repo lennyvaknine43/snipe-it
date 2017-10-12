@@ -61,6 +61,8 @@ class CheckinNotification extends Notification
                 $admin_user = $this->params['admin'];
                 $fields = [
                     'By' => '<'.$admin_user->present()->viewUrl().'|'.$admin_user->present()->fullName().'>',
+                    'Model Name' => $item["model"]["name"],
+                    'Model Number' => $item["model"]["model_number"],
                 ];
                 array_key_exists('note', $this->params) && $fields['Notes'] = $this->params['note'];
 

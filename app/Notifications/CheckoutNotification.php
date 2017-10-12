@@ -66,7 +66,9 @@ class CheckoutNotification extends Notification
                 $target = $this->params['target'];
                 $fields = [
                     'To' => '<'.$target->present()->viewUrl().'|'.$target->present()->fullName().'>',
-                    'By' => '<'.$admin_user->present()->viewUrl().'|'.$admin_user->present()->fullName().'>'
+                    'By' => '<'.$admin_user->present()->viewUrl().'|'.$admin_user->present()->fullName().'>',
+                    'Model Name' => $item["model"]["name"],
+                    'Model Number' => $item["model"]["model_number"],
                 ];
                 array_key_exists('note', $this->params) && $fields['Notes'] = $this->params['note'];
 
